@@ -24,6 +24,12 @@ app.post("/post-endpoint", (req, res) => {
   });
 });
 
+app.get("/error", (req, res) => {
+  res.status(500).json({
+    message: "error",
+  });
+});
+
 // catch all route
 app.all("*", (req, res) => {
   res.status(404).send("Page not found");
